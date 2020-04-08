@@ -5,9 +5,9 @@ spring:
   datasource:
     initialization-mode: always
     platform: postgres
-    url: jdbc:postgresql://localhost:5432/mai
-    username: postgres
-    password: postgres
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/mai}
+    username: ${JDBC_DATABASE_USERNAME:postgres}
+    password: ${JDBC_DATABASE_PASSWORD:postgres}
     hikari:
       connectionTimeout: 20000
       maximumPoolSize: 5
