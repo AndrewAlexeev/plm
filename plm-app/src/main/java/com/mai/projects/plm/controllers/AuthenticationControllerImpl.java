@@ -29,7 +29,7 @@ public class AuthenticationControllerImpl extends AbstractMainController impleme
     @ResponseBody
     public ResponseEntity<ResponseObject<TokenResponse>> login(@RequestBody AuthenticationRequest requestDto) {
         try {
-            String username = requestDto.getUsername();
+            String username = requestDto.getUserName();
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, requestDto.getPassword()));
             User user = userService.findByUserName(username);
 

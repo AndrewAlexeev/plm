@@ -5,9 +5,11 @@ import com.mai.projects.plm.enums.ErrorEnum;
 import com.mai.projects.plm.exception.ServerException;
 import com.mai.projects.plm.model.response.ResponseHeader;
 import com.mai.projects.plm.model.response.ResponseObject;
+import com.mai.projects.plm.security.jwt.exception.JwtAuthenticationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
 import java.time.LocalDateTime;
@@ -29,4 +31,13 @@ public class ExceptionHandler extends AbstractMainController implements Controll
     }
 
 
+    @Override
+    public <T> ResponseEntity<ResponseObject<Object>> catchAuthenticationException(AuthenticationException ex) {
+        ResponseHeader responseHeader= new ResponseHeader();
+        //ErrorEnum errorEnum = ex.getError();
+        //responseHeader.setResponseCode(errorEnum.getCode());
+//        responseHeader.setResponseMessage(String.format(errorEnum.getMessage(), null));
+        //TODO доделать
+        return prepareResponseEntity(responseHeader,HttpStatus.UNAUTHORIZED);
+    }
 }

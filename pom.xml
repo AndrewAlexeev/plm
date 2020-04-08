@@ -14,7 +14,6 @@
 
     <properties>
         <spring-boot-dependencies.version>2.2.4.RELEASE</spring-boot-dependencies.version>
-        <java.version>1.8</java.version>
         <lombok.version>1.18.10</lombok.version>
         <javax-validation.version>2.0.1.Final</javax-validation.version>
         <spring-security.version>5.0.6.RELEASE</spring-security.version>
@@ -129,8 +128,6 @@
                 <artifactId>jackson-core</artifactId>
                 <version>${jackson-core.version}</version>
             </dependency>
-
-
         </dependencies>
     </dependencyManagement>
 
