@@ -31,7 +31,8 @@ spring:
     change-log: classpath:com\\mai\\projects\\plm\\database\\migration\\plm.xml
 
 server:
-  port: 5050
+  port: ${PORT:5050}
+
 
 jwt:
   token:
