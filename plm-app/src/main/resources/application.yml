@@ -10,10 +10,10 @@ spring:
     password: ${JDBC_DATABASE_PASSWORD:postgres}
     hikari:
       connectionTimeout: 20000
-      maximumPoolSize: 5
+      maximumPoolSize: 3
       schema: plm
-      maximum-pool-size: 10
-      minimum-idle: 5
+      maximum-pool-size: 3
+      minimum-idle: 1
       connection-timeout: 30000
 
   jpa:
